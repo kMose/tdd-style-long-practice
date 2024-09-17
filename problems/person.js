@@ -17,6 +17,15 @@ class Person {
   switchVisit = (otherPerson) => {
     return otherPerson.visit(this);
   }
+
+  update(obj){
+    if((typeof obj) !== "object"){
+      throw new TypeError();
+    }
+
+    this.name = obj.name;
+    this.age = obj.age;
+  }
 }
 
 module.exports = Person;

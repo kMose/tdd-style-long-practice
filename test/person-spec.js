@@ -63,3 +63,36 @@ describe("switchVisit(otherPerson) invokes visit of otherPerson, passing in curr
     })
 
 })
+
+
+describe("update(obj) updates the person object with a name and age.", function (){
+    context("Is not a valid object", function (){
+        it("Argument is not an object, throw a TypeError", function() {
+            let badInput1 = "foo";
+            let badInput2 = 21;
+
+            expect(() => person1.update(badInput1)).to.throw(TypeError)
+            expect(() => person1.update(badInput2)).to.throw(TypeError)
+        })
+    })
+
+
+    context("is a valid object, update it", function (){
+        it("Changes properties of person 1 to John and then Sansa", function (){
+
+
+            let goodInput1 = {name: "John", age: 65};
+            let goodInput2 = {name: "Sansa", age: 19};
+
+            person1.update(goodInput1);
+            expect(person1).to.have.property("name", "John");
+            expect(person1).to.have.property("age", 65);
+            person1.update(goodInput2);
+            expect(person1).to.have.property("name", "Sansa");
+            expect(person1).to.have.property("age", 19);
+        })
+    })
+
+
+
+})
