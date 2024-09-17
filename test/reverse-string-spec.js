@@ -8,4 +8,27 @@ describe("reverseString Function", function (){
 
         expect(result).to.equal("nuf")
     })
+
+    it("Reverses the word pen to nep", function (){
+        let word1 = "pen";
+        let result = reverseString(word1);
+
+        expect(result).to.equal("nep")
+    })
+
+    it("Reverses the word onomatopoeia to aieopotamono", function (){
+        let word1 = "onomatopoeia";
+        let result = reverseString(word1);
+
+        expect(result).to.equal("aieopotamono")
+    })
+
+
+    it("Throws an error on invalid input", function (){
+        let word1 = 5;
+        let word2 = ""
+
+        expect(() => reverseString(word1)).to.throw(TypeError);
+        expect(() => reverseString(word2)).to.throw(TypeError);
+    })
 })
