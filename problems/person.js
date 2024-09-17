@@ -14,6 +14,9 @@ class Person {
   }
 
 
+  switchVisit = (otherPerson) => {
+    return otherPerson.visit(this);
+  }
 }
 
 module.exports = Person;
