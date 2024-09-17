@@ -40,10 +40,6 @@ describe("sayHello() returns a string with the persons name and says Hello!", fu
 
 })
 
-
-
-
-
 describe("visit(otherPerson) instance method returns a string stating person1.visited(person2)", function (){
 
     it("returns Todd visited Howard", function (){
@@ -56,7 +52,14 @@ describe("visit(otherPerson) instance method returns a string stating person1.vi
         expect(result2).to.equal("Howard visited Todd.");
         expect(result3).to.equal("Todd visited Bolton.");
     })
+})
 
+describe("switchVisit(otherPerson) invokes visit of otherPerson, passing in current instance as argument", function (){
 
+    it("returns Howard visited Todd", function (){
+        let result1 = person1.switchVisit(person2);
+
+        expect(result1).to.equal("Howard visited Todd.");
+    })
 
 })
