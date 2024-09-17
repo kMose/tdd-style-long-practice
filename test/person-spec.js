@@ -48,8 +48,13 @@ describe("visit(otherPerson) instance method returns a string stating person1.vi
 
     it("returns Todd visited Howard", function (){
         let result1 = person1.visit(person2);
+        let result2 = person2.visit(person1);
+        let result3 = person1.visit(person3);
 
-        expect(result1).to.equal("Todd visted Howard");
+
+        expect(result1).to.equal("Todd visited Howard.");
+        expect(result2).to.equal("Howard visited Todd.");
+        expect(result3).to.equal("Todd visited Bolton.");
     })
 
 

@@ -6,8 +6,13 @@ class Person {
 
 
   sayHello() {
-    return null;
+    return `${this.name} says Hello!`;
   }
+
+  visit = (otherPerson) => {
+    return `${this.name} visited ${otherPerson.name}.`
+  }
+
 
 }
 
