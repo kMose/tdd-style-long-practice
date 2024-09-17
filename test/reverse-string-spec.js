@@ -23,12 +23,13 @@ describe("reverseString Function", function (){
         expect(result).to.equal("aieopotamono")
     })
 
-
     it("Throws an error on invalid input", function (){
         let word1 = 5;
         let word2 = ""
+        let word3 = null
 
         expect(() => reverseString(word1)).to.throw(TypeError);
         expect(() => reverseString(word2)).to.throw(TypeError);
+        expect(() => reverseString(word3)).to.throw(TypeError);
     })
 })
