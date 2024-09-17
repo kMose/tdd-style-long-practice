@@ -1,5 +1,14 @@
 class Person {
-  // Your code here
+  constructor(name, age){
+    this.name = name;
+    this.age = age;
+  }
+
+
+  sayHello() {
+    return null;
+  }
+
 }
 
 module.exports = Person;
