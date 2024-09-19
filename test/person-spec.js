@@ -109,11 +109,17 @@ describe("update(obj) updates the person object with a name and age.", function 
 
             })
         })
-        // context("update returns false", function (){
-        //     it("returns false, does not throw an error", function (){
+        context("update returns false", function (){
+            it("returns false, does not throw an error", function (){
+                person1 = new Person("Todd", 33);
+                output = person1.tryUpdate(null);
 
-        //     })
-        // })
+                expect(output).to.be.false;
+                expect(person1.name).to.equal("Todd");
+                expect(person1.age).to.equal(33);
+
+            })
+        })
     })
 
 

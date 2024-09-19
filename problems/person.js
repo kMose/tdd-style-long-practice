@@ -19,23 +19,22 @@ class Person {
   }
 
   update(obj){
-    if((typeof obj) !== "object"){
-      throw new TypeError();
-    }
+    if(obj === null) throw new TypeError();
+    if((typeof obj) !== "object") throw new TypeError();
+
 
     this.name = obj.name;
     this.age = obj.age;
   }
 
   tryUpdate(obj){
-    if((typeof obj) !== "object"){
-      return false;
-    }
+    if(obj === null) return false;
+    if((typeof obj) !== "object") return false;
+
     this.update(obj);
     return true;
+
   }
-
-
 }
 
 module.exports = Person;
