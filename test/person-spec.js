@@ -123,5 +123,27 @@ describe("update(obj) updates the person object with a name and age.", function 
     })
 
 
+    describe("greetAll - static method, takes an array of Person instances, calls sayHello on each, stores each in an array of strings, returns array", function (){
+        it("returns an array of strings containing name says hello", function (){
+            let personArray = [person1, person2, person3, person4];
+            let helloReturn = Person.greetAll(personArray);
+
+            expect(helloReturn).to.be.an('array');
+
+            for(let i = 0; i < helloReturn.length; i++){
+                expect(helloReturn[i]).to.equal(`${personArray[i].name} says Hello!`)
+            }
+
+
+            // expect(helloReturn[0]).to.equal("Todd says Hello!")
+            // expect(helloReturn[1]).to.equal("Howard says Hello!")
+            // expect(helloReturn[2]).to.equal("Bolton says Hello!")
+            // expect(helloReturn[3]).to.equal("Tyrion says Hello!")
+        })
+
+
+    })
+
+
 
 })
