@@ -26,6 +26,16 @@ class Person {
     this.name = obj.name;
     this.age = obj.age;
   }
+
+  tryUpdate(obj){
+    if((typeof obj) !== "object"){
+      return false;
+    }
+    this.update(obj);
+    return true;
+  }
+
+
 }
 
 module.exports = Person;

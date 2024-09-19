@@ -94,5 +94,28 @@ describe("update(obj) updates the person object with a name and age.", function 
     })
 
 
+    describe("tryUpdate(obj) invoke update(obj) returns true if update was successfully invoked otherwise false", function (){
+        context("Update returns true", function(){
+            it("returned true and instance has new property values", function (){
+                let goodInput1 = {name: "John", age: 65};
+                let output = null;
+                output = person1.tryUpdate(goodInput1);
+
+                expect(output).to.be.true;
+                expect(person1).to.have.property("name", "John");
+                expect(person1).to.have.property("age", 65);
+
+
+
+            })
+        })
+        // context("update returns false", function (){
+        //     it("returns false, does not throw an error", function (){
+
+        //     })
+        // })
+    })
+
+
 
 })
