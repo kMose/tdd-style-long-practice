@@ -33,8 +33,22 @@ class Person {
 
     this.update(obj);
     return true;
-
   }
+
+static greetAll(array){
+  if ((typeof array[0] !== 'object')) throw Error("This isnt an object array.")
+
+  let helloArray = [];
+
+  for(let i = 0; i < array.length; i++){
+      helloArray.push(array[i].sayHello());
+  }
+
+  return helloArray;
+
+
+}
+
 }
 
 module.exports = Person;

@@ -134,13 +134,7 @@ describe("update(obj) updates the person object with a name and age.", function 
                 expect(helloReturn[i]).to.equal(`${personArray[i].name} says Hello!`)
             }
 
-
-            // expect(helloReturn[0]).to.equal("Todd says Hello!")
-            // expect(helloReturn[1]).to.equal("Howard says Hello!")
-            // expect(helloReturn[2]).to.equal("Bolton says Hello!")
-            // expect(helloReturn[3]).to.equal("Tyrion says Hello!")
         })
-
 
     })
 
