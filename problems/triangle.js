@@ -4,8 +4,13 @@ class Triangle{
         this.side2 = side2;
         this.side3 = side3;
     }
+
+
+
+    getPerimeter() {
+        return this.side1 + this.side2 + this.side3;
+    }
+
 }
-
-
 
 module.exports = {Triangle}
