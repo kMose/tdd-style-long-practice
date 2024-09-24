@@ -87,11 +87,18 @@ describe("Scalene triangle class initilization", function (){
 
     it("inherits isValidTriangle, and hasValidSideLengths instance methods, and isValid Property", function (){
         let scaleneValid = new Scalene(25, 13, 24);
-        scaleneValid.validate()
 
         expect(scaleneValid).to.have.property("isValid", true);
 
     })
+})
 
+describe("isScalene() function", function(){
+    it("returns true if sides are unequal", function (){
 
+    })
+
+    it("returns false if sides are equal", function (){
+
+    })
 })

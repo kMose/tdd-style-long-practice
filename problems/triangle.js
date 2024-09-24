@@ -37,6 +37,7 @@ class Triangle{
 class Scalene extends Triangle {
     constructor(side1, side2, side3){
         super(side1, side2, side3)
+        super.validate()
     }
 
 
