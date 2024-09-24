@@ -27,11 +27,19 @@ class Triangle{
         triangleArray.forEach((currentTriangle) => {
             currentTriangle.validate();
             if (currentTriangle.isValid) validTriangles.push(currentTriangle);
-            console.log(validTriangles)
         })
         return validTriangles;
     }
 
 }
 
-module.exports = {Triangle}
+
+class Scalene extends Triangle {
+    constructor(side1, side2, side3){
+        super(side1, side2, side3)
+    }
+
+
+}
+
+module.exports = {Triangle, Scalene}

@@ -1,5 +1,5 @@
 const {expect} = require("chai")
-const {Triangle} = require("../problems/triangle.js")
+const {Triangle, Scalene} = require("../problems/triangle.js")
 
 let triangle1, triangle2, triangleInvalid;
 
@@ -75,5 +75,23 @@ describe("getValidTriangles() static method", function(){
         expect(validTriangleArray).to.not.include(triangleInvalid)
 
     })
+
+})
+
+describe("Scalene triangle class initilization", function (){
+    it("initializes ", function (){
+        let scaleneValid = new Scalene(25, 13, 24);
+
+        expect(scaleneValid).to.have.property("side1", 25);
+    })
+
+    it("inherits isValidTriangle, and hasValidSideLengths instance methods, and isValid Property", function (){
+        let scaleneValid = new Scalene(25, 13, 24);
+        scaleneValid.validate()
+
+        expect(scaleneValid).to.have.property("isValid", true);
+
+    })
+
 
 })
