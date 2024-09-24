@@ -1,5 +1,5 @@
 const {expect} = require("chai")
-const {Triangle, Scalene} = require("../problems/triangle.js")
+const {Triangle, Scalene, Isoceles} = require("../problems/triangle.js")
 
 let triangle1, triangle2, triangleInvalid, scaleneValid, scaleneInvalid;
 

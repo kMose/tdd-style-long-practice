@@ -55,4 +55,25 @@ class Scalene extends Triangle {
 
 }
 
-module.exports = {Triangle, Scalene}
+class Isoceles extends Triangle{
+    constructor(side1, side2, side3){
+        super(side1,side2,side3)
+        super.validate();
+    }
+
+    isIsoceles(){
+        let equalSides = 0;
+        if(this.side1 == this.side2 && this.side2 == this.side3) return false;
+        if(this.side1 == this.side2) return true;
+        if(this.side1 == this.side3) return true;
+        if(this.side2 == this.side3) return true;
+        return false;
+    }
+
+    validate(){
+        this.isValidIsoceles = this.isIsoceles()
+    }
+
+}
+
+module.exports = {Triangle, Scalene, Isoceles}
