@@ -98,11 +98,20 @@ describe("isScalene() function", function(){
     it("returns true if sides are unequal", function (){
         let result = scaleneValid.isValidScalene();
         expect(result).to.equal(true);
-
     })
 
     it("returns false if sides are equal", function (){
         let result = scaleneInvalid.isValidScalene();
         expect(result).to.equal(false);
     })
+
+    it("returns false if invalid triangle to begin with", function(){
+        let badTriangle = new Scalene(100,1,2)
+        let result = badTriangle.isValidScalene();
+
+        expect(badTriangle).to.have.property("isValid", false);
+        expect(result).to.equal(false)
+    })
+
+    it("")
 })
