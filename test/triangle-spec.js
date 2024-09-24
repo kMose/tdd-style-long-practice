@@ -112,6 +112,21 @@ describe("isScalene() function", function(){
         expect(badTriangle).to.have.property("isValid", false);
         expect(result).to.equal(false)
     })
+})
 
-    it("")
+describe("validate() for Scalene Triangle", function(){
+    it("adds an isValidScalene Property to the scalene triangle instance", function(){
+        scaleneInvalid.validate();
+        expect(scaleneInvalid).to.have.property("isValidScalene")
+    })
+
+    it("isvalidscalene is FALSE after validation", function(){
+        scaleneInvalid.validate();
+        expect(scaleneInvalid).to.have.property("isValidScalene", false)
+    })
+
+    it("isValidscalene is TRUE after validation", function(){
+        scaleneValid.validate();
+        expect(scaleneInvalid).to.have.property("isValidScalene", true)
+    })
 })
