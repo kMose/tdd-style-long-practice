@@ -1,12 +1,15 @@
 const {expect} = require("chai")
 const {Triangle, Scalene} = require("../problems/triangle.js")
 
-let triangle1, triangle2, triangleInvalid;
+let triangle1, triangle2, triangleInvalid, scaleneValid, scaleneInvalid;
 
 beforeEach(() => {
     triangle1 = new Triangle(5, 5, 5);
     triangle2 = new Triangle(2,2,1)
     triangleInvalid = new Triangle(10, 15, 33)
+    scaleneValid = new Scalene(25, 13, 24);
+    scaleneInvalid = new Scalene(25, 13, 25)
+
 })
 
 describe("Constructor", function (){
@@ -80,13 +83,11 @@ describe("getValidTriangles() static method", function(){
 
 describe("Scalene triangle class initilization", function (){
     it("initializes ", function (){
-        let scaleneValid = new Scalene(25, 13, 24);
 
         expect(scaleneValid).to.have.property("side1", 25);
     })
 
     it("inherits isValidTriangle, and hasValidSideLengths instance methods, and isValid Property", function (){
-        let scaleneValid = new Scalene(25, 13, 24);
 
         expect(scaleneValid).to.have.property("isValid", true);
 
@@ -95,10 +96,13 @@ describe("Scalene triangle class initilization", function (){
 
 describe("isScalene() function", function(){
     it("returns true if sides are unequal", function (){
+        let result = scaleneValid.isValidScalene();
+        expect(result).to.equal(true);
 
     })
 
     it("returns false if sides are equal", function (){
-
+        let result = scaleneInvalid.isValidScalene();
+        expect(result).to.equal(false);
     })
 })
