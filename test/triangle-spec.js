@@ -8,7 +8,9 @@ beforeEach(() => {
     triangle2 = new Triangle(2,2,1)
     triangleInvalid = new Triangle(10, 15, 33)
     scaleneValid = new Scalene(25, 13, 24);
-    scaleneInvalid = new Scalene(25, 13, 25)
+    scaleneInvalid = new Scalene(25, 13, 25);
+    isoValid = new Isoceles(25,25,13);
+    isoInvalid = new Isoceles(25,24,13);
 
 })
 
@@ -128,5 +130,47 @@ describe("validate() for Scalene Triangle", function(){
     it("isValidscalene is TRUE after validation with scaleneValid.validate()", function(){
         scaleneValid.validate();
         expect(scaleneValid).to.have.property("isValidScalene", true)
+    })
+})
+
+
+describe("Isoceles triangle class initilization", function (){
+    it("initializes ", function (){
+        expect(isoValid).to.have.property("side1", 25);
+    })
+
+    it("inherits isValidTriangle, and hasValidSideLengths instance methods, and isValid Property", function (){
+
+        expect(isoValid).to.have.property("isValid", true);
+
+    })
+})
+
+describe("isIsoceles() function", function(){
+    it("returns true if two sides are equal", function (){
+        let result = isoValid.isIsoceles();
+        expect(result).to.equal(true);
+    })
+
+    it("returns false if two sides arent equal", function (){
+        let result = isoInvalid.isIsoceles();
+        expect(result).to.equal(false);
+    })
+})
+
+describe("validate() for isoceles Triangle", function(){
+    it("adds an isValidIsoceles Property to the isoceles triangle instance", function(){
+        isoInvalid.validate();
+        expect(isoInvalid).to.have.property("isValidIsoceles")
+    })
+
+    it("isValidIsoceles is FALSE after validation with isoInvalid.validate()", function(){
+        isoInvalid.validate();
+        expect(isoInvalid).to.have.property("isValidIsoceles", false)
+    })
+
+    it("isValidIsoceles is TRUE after validation with isocelesValid.validate()", function(){
+        isoValid.validate();
+        expect(isoValid).to.have.property("isValidIsoceles", true)
     })
 })
