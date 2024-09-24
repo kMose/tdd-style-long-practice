@@ -41,12 +41,16 @@ class Scalene extends Triangle {
     }
 
 
-    isValidScalene (){
+    isScalene (){
         if(this.isValid == false) return false;
         if(this.side1 == this.side2) return false;
         if(this.side1 == this.side3) return false;
         if(this.side2 == this.side3) return false;
         return true;
+    }
+
+    validate(){
+        this.isValidScalene = this.isScalene()
     }
 
 }

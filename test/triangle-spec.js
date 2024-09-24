@@ -96,18 +96,18 @@ describe("Scalene triangle class initilization", function (){
 
 describe("isScalene() function", function(){
     it("returns true if sides are unequal", function (){
-        let result = scaleneValid.isValidScalene();
+        let result = scaleneValid.isScalene();
         expect(result).to.equal(true);
     })
 
     it("returns false if sides are equal", function (){
-        let result = scaleneInvalid.isValidScalene();
+        let result = scaleneInvalid.isScalene();
         expect(result).to.equal(false);
     })
 
     it("returns false if invalid triangle to begin with", function(){
         let badTriangle = new Scalene(100,1,2)
-        let result = badTriangle.isValidScalene();
+        let result = badTriangle.isScalene();
 
         expect(badTriangle).to.have.property("isValid", false);
         expect(result).to.equal(false)
@@ -117,16 +117,16 @@ describe("isScalene() function", function(){
 describe("validate() for Scalene Triangle", function(){
     it("adds an isValidScalene Property to the scalene triangle instance", function(){
         scaleneInvalid.validate();
-        expect(scaleneInvalid).to.have.property("isValidScalene", false)
+        expect(scaleneInvalid).to.have.property("isValidScalene")
     })
 
-    it("isvalidscalene is FALSE after validation", function(){
+    it("isvalidscalene is FALSE after validation with scaleneInvalid.validate()", function(){
         scaleneInvalid.validate();
         expect(scaleneInvalid).to.have.property("isValidScalene", false)
     })
 
-    it("isValidscalene is TRUE after validation", function(){
+    it("isValidscalene is TRUE after validation with scaleneValid.validate()", function(){
         scaleneValid.validate();
-        expect(scaleneInvalid).to.have.property("isValidScalene", true)
+        expect(scaleneValid).to.have.property("isValidScalene", true)
     })
 })
