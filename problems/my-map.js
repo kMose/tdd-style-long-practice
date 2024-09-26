@@ -1,5 +1,11 @@
 function myMap(inputArray, callback) {
-  // Your code here
+  let result = [];
+
+  inputArray.forEach((element) =>{
+    result.push(callback(element))
+  })
+
+  return result;
 }
 
 module.exports = myMap;
