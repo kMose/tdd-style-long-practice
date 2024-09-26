@@ -134,6 +134,13 @@ describe("validate() for Scalene Triangle", function(){
 })
 
 
+// ISOCELES TESTS
+// ISOCELES TESTS
+// ISOCELES TESTS
+// ISOCELES TESTS
+// ISOCELES TESTS
+
+
 describe("Isoceles triangle class initilization", function (){
     it("initializes ", function (){
         expect(isoValid).to.have.property("side1", 25);
@@ -174,3 +181,5 @@ describe("validate() for isoceles Triangle", function(){
         expect(isoValid).to.have.property("isValidIsoceles", true)
     })
 })
+
+
